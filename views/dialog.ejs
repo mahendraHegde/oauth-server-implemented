@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>OAuth2Orize Recipes Decision</title>
+  <!-- Needed for mobile sites to work -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<form action="/dialog/authorize/decision" method="post" >
+  <input name="transaction_id" type="hidden" value="<%= transactionID %>">
+  <fieldset>
+    <!-- Upper box with Title, username, and password -->
+    <div >
+      <!-- Title -->
+      <div>
+        <div >Decision</div>
+        <div >Authorization Server</div>
+      </div>
+      <div >
+        <p>
+
+        <p><%= user.name %>,</p>
+        The application <b><%= client.name %></b> is requesting access to your account.
+        <p>Do you approve?</p>
+        </p>
+      </div>
+    </div>
+    <div >
+      <div >
+        <div>
+          <input type="submit" value="Accept" id="allow">
+          <span>&nbsp&nbsp</span>
+          <input  type="submit" value="Deny" name="cancel" id="deny">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+</body>
+</html>
+
+
